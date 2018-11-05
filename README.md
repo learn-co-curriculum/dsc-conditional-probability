@@ -38,7 +38,7 @@ What about the case of three events A, B and C?
 > Events A, B and C are __independent__ if 
 >
 > \begin\{align\}
->     P(A \cap B) &= P(A)P(B), ~~  P(A \cap C) = P(A)P(C), ~~ P(B \cap C) = P(B)P(C) \\\\
+>     P(A \cap B) &= P(A)P(B), P(A \cap C) = P(A)P(C), P(B \cap C) = P(B)P(C) \\\\
 >     P(A \cap B \cap C) &= P(A)P(B)P(C)
 > \end\{align\}
 >
@@ -158,7 +158,9 @@ $$P(A1, A2, ..., An) = P(A1| A2, ..., An) P(A2| A3, ..., An) P(An-1|An) P(An)$$
 
 In general we refer to this as the chain rule.
 
-If on the other hand, if $C_1, C_2,...,C_m$ are disjoint events such that $C_1 \cup C_2 \cup ··· \cup  C_m = \Omega$ the probability of an arbitrary event can be expressed as:
+If on the other hand, 
+
+if $C_1, C_2,...,C_m$ are disjoint events such that $C_1\cup C_2\cup ··· \cup  C_m = \Omega$ the probability of an arbitrary event can be expressed as:
 
 \begin{align}
 P(A) = P(A | C_1)P(C_1) + P(A | C_2)P(C_2) + ··· + P(A | C_m)P(C_m)
@@ -169,7 +171,7 @@ P(A) = P(A | C_1)P(C_1) + P(A | C_2)P(C_2) + ··· + P(A | C_m)P(C_m)
 The **Bayes theorem**, which is the outcome of this section. Below is the formula that we will dig deeper into , in upcoming lessons.
 
 \begin{align}
-    P(A|B) = \frac{P(B|A)P(A)}{P(B)} ~~~~ \text{this follows from Theorem 1}
+    P(A|B) = \frac{P(B|A)P(A)}{P(B)} \text{-        this follows from Theorem 1}
 \end{align}
 
 ## Example : An Aspiring Data Scientist's Dilemma
