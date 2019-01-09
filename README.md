@@ -17,7 +17,10 @@ Let's quickly recap some of the basic ideas and terms which we shall later use i
 
 ## Events and Sample Space
 
-An **Event** is the outcome of a random experiment e.g. watching heads on tossing of a coin, or getting 3 after a dice roll are events.  We need to specify the sample space and the events to compute event probability. An event may also be collection of different events grouped together e.g. rolling a dice 4 times. A **Sample space** is a collection of every single possible outcome in a trial. As the number of trials increases, our sample space contains all the achievable outcomes. For example, sample space for random throw of a die is {1,2,3,4,5,6}. One of these will undoubtedly happen in the event of throwing a die. The sample space depicts each one of the conceivable outcomes that can happen when the experiment is performed.
+An **Event** is the outcome of a random experiment e.g. watching heads on tossing of a coin, or getting 3 after a dice roll are events.  We need to specify the sample space and the events to compute event probability. An event may 
+also be collection of different events grouped together e.g. rolling a dice 4 times.  
+
+A **Sample space** is a collection of every single possible outcome in a trial. In more formal mathematics the entire sample space is represented as an uppercase omega, $\Omega$. For example, sample space for random throw of a die is {1,2,3,4,5,6}. One of these will undoubtedly happen in the event of throwing a die. The sample space depicts each one of the conceivable outcomes that can happen when the experiment is performed.
 
 Events in a sample could be either **dependent** or **independent**. For two events P and Q, the chance that the occurring of event P doesn’t influence the occurring of event Q, these events are called as independent events. If the P occurrence of P is somehow dependent on occurrence of Q , P would be dependent on Q (think temporal data). 
 
@@ -146,15 +149,15 @@ The **chain rule** (also called the general product rule) permits the calculatio
 
 We can rearrange the formula for conditional probability to get the product rule:
 
->$P(A,B) = p(A|B) p(B)$
+>$P(A \cap B) = P(A|B) \ P(B)$
 
 We can extend this for three variables:
 
->$P(A,B,C) = P(A| B,C) P(B,C) = P(A|B,C) P(B|C) P(C)$
+>$P(A\cap B \cap C) = P(A| B \cap C) \ P(B \cap C) = P(A|B \cap C) \ P(B|C) \ P(C)$
 
 and in general to n variables:
 
-$$P(A1, A2, ..., An) = P(A1| A2, ..., An) P(A2| A3, ..., An) P(An-1|An) P(An)$$
+$$P(A1 \cap A2 \ \cap ... \cap \ An) = P(A1| A2 \cap ... \cap An) P(A2| \ A3\  \cap ... \cap \ An) P(An-1|An) P(An)$$
 
 In general we refer to this as the chain rule.
 
