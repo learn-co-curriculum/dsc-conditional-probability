@@ -12,7 +12,7 @@ In this lesson, you'll learn about conditional probability, what it is, and how 
 You will be able to:
 
 * Differentiate between independent and dependent random events 
-* Understand and Explain the conditional probability: $P(A \cap B) = P(A\mid B)*P(B) $
+* Understand and Explain the conditional probability: $P(A \cap B) = P(A\mid B)P(B) $
 * Use the multiplication rule to find the probability of the intersection of two events
 * Understand and describe some important theorems based on conditional probabilities
 
@@ -94,27 +94,29 @@ A **tree diagram** can be used to explore all possible events.
 
 ## Conditional Probability 
 
-> **Conditional Probability emerges in the examination of experiments where a result of a trial may influence the results of the upcoming trials.**
+**Conditional probability emerges when the outcome a trial may influence the results of the upcoming trials.**
 
-While calculating the probability of the second event (event B) given that the primary event (event A) has just happened, if there is a chance that A's outcome might have tempered with the sample space in some way, we can securely say that the probability of event B is reliant on the occurrence of event A.
+While calculating the probability of the second event (event $B$) given that the primary event (event $A$) has just happened, we say that the probability of event B is relies on the occurrence of event A.
 
 Here are some more examples: 
 
-* Drawing a 2nd Ace from a deck of cards given we got the initial Ace.
-* Finding the probability of liking "Matrix" given the individual prefers science fiction.
+* Drawing a 2nd Ace from a deck of cards given that the first card you drew was an Ace.
+* Finding the probability of liking "the Matrix" given that you known this person likes science fiction.
 
-If we consider event with P(A) as the probability of the event we are attempting to ascertain.
-Event B is the condition that we know or the event that has happened.
 
-We can compose the conditional probability (Probability of A **GIVEN** B) as :
+Let's say that $P(A)$ is the event we are interested in, and this event depends on a certain event $B$ that has happened. 
+
+The conditional probability (Probability of A **given** B) can be written as:
 $$ P (A \mid B) = \dfrac{P(A \cap B)}{P(B)}$$
 
 
-> **P(A|B)**, the probability of the taking place of event A **given** that B has just happened. 
 
-<img src="images/cond4.png" width=300>
+$P(A|B)$, is the probability A **given** that B has just happened. 
 
-Here’s how to derive the conditional probability equation shown above from the multiplication rule:
+<img src="images/cond4.png" width="300">
+
+
+Understanding this formula may be easier if you look at two simple Venn Diagrams and use the multiplication rule. Here's how to derive this formula:
 
 Step 1: Write out the multiplication rule:
 * $P(A \cap B)= P(B)*P(A\mid B)$
@@ -128,62 +130,49 @@ Step 3: Cancel P(B) on the right side of the equation:
 Step 4: This is of course equal to:
 * $ P(A \mid B)=\dfrac{P(A \cap B)}{P(B)} $
 
-And this is our conditional probability formula. Here we shall quickly summarize some variations and theorems which emerge from conditional probability that will be used for reference in later lessons. 
+And this is our conditional probability formula. 
 
-### Complement of an event
-
-#### P(A')  - read as "Probability of the complement of Event A" or "Probability of A complement" or even "Probability of NOT A"
-
-The complement is shown by a little mark after the letter such as A' (or sometimes A<sub>c</sub> or A<sup>c</sup>)
-
-<img src="comp.png" width=500>
+There are a few variations and theorems that are related to and/or results of this conditional probability formula. The most important ones are: the **product rule**, the **chain rule** and **Bayes Theorem**
 
 
-If for a dice roll, event A is seeing a 5 is P(A) = 1/6 , then P(A') is the probability of all other events in the sample space i.e. 1/6* 5 = 5/6
 
-The two probabilities always add to 1
-* P(A) + P(A') = 1
+### Theorem 1 - Product Rule
 
->  **Similarly P(A|B) + P(A'|B) = 1**
-
-## Theorem 1 - Product Rule
-The **Product rule** is useful when the conditional probability is easy to compute, but the probability of intersections of events are not. 
+The **product rule** was used to derive the conditional probability formula above, but often used as is in situations where the conditional probability is easy to compute, but the probability of intersections of events isn't. 
 
 The intersection of events $A$ and $B$ can be given by
 
 \begin{align}
-    P(A \cap B) = P(B) P(A|B) = P(A) P(B|A)
+    P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)
 \end{align}
 
-Note that if $A$ and $B$ are independent, then conditioning on $B$ means nothing (and vice-versa) so $P(A|B) = P(A)$, and $P(A \cap B) = P(A) P(B)$ as we know already. 
+Remember that if $A$ and $B$ are independent, then conditioning on $B$ means nothing (and vice-versa) so $P(A|B) = P(A)$, and $P(A \cap B) = P(A) P(B)$.
 
-## Theorem 2 - Chain Rule
+### Theorem 2 - Chain Rule
 
-The **chain rule** (also called the general product rule) permits the calculation of any member of the joint distribution of a set of random variables using only conditional probabilities. 
+The **chain rule** (also called the **general product rule**) permits the calculation of any member of the joint distribution of a set of random variables using only conditional probabilities. 
 
-We can rearrange the formula for conditional probability to get the product rule:
+Recall the product rule: 
 
->$P(A \cap B) = P(A|B) \ P(B)$
+$P(A \cap B) = P(A \mid B) P(B)$
 
-We can extend this for three variables:
+When you extend this for three variables:
 
->$P(A\cap B \cap C) = P(A| B \cap C) \ P(B \cap C) = P(A|B \cap C) \ P(B|C) \ P(C)$
+$P(A\cap B \cap C) = P(A\cap( B \cap C)) = P(A\mid B \cap C) P(B \cap C) = P(A \mid B \cap C) P(B \mid C) P(C)$
 
-and in general to n variables:
+And you can keep extending this to $n$ variables:
 
-$$P(A1 \cap A2 \ \cap ... \cap \ An) = P(A1| A2 \cap ... \cap An) P(A2| \ A3\  \cap ... \cap \ An) P(An-1|An) P(An)$$
+$$P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_1 \mid A_2 \cap \ldots\cap A_n) P(A_2 \mid A_3  \cap \ldots \cap \ A_n) P(A_{n-1}|A_n) P(A_n)$$
 
-In general we refer to this as the chain rule.
+This idea is known as the **chain rule**.
 
-If on the other hand, 
-
-if $C_1, C_2,...,C_m$ are disjoint events such that $C_1\cup C_2\cup ··· \cup  C_m = \Omega$ the probability of an arbitrary event can be expressed as:
+If on the other hand you have disjoint events $C_1, C_2,...,C_m$ such that $C_1\cup C_2\cup ··· \cup  C_m = \Omega$, the probability of any event can be decomposed as:
 
 \begin{align}
-P(A) = P(A | C_1)P(C_1) + P(A | C_2)P(C_2) + ··· + P(A | C_m)P(C_m)
+P(A) = P(A \mid C_1)P(C_1) + P(A \mid C_2)P(C_2) + \ldots + P(A \mid C_m)P(C_m)
 \end{align}
 
-## Theorem 3 - Bayes rule
+### Theorem 3 - Bayes Theorem
 
 The **Bayes theorem**, which is the outcome of this section. Below is the formula that we will dig deeper into , in upcoming lessons.
 
@@ -191,63 +180,88 @@ The **Bayes theorem**, which is the outcome of this section. Below is the formul
     P(A|B) = \frac{P(B|A)P(A)}{P(B)} \text{-        this follows from Theorem 1}
 \end{align}
 
+
+
+
+### Additional note: the complement of an event
+
+You learned about (absolute and relative) complements before, but in the complement of an event is also extendible to conditional probabilities.
+
+The basic rule is:
+
+$P(A) + P(A') = 1$
+
+with A' being the complement of A.
+
+Similarly, extending this to conditional probabilities:
+
+$P(A|B) + P(A'|B) = 1$
+
 ## Example : An Aspiring Data Scientist's Dilemma
 
 Let's see a very simple use of conditional probability formula. A data scientist comes across following info-graphic:
 
-<img src="mood.jpg" width=600>
+<img src="images/mood.jpg" width="600">
 
 Curious as data scientists are, he starts collecting data about weather conditions and his own mood. 
 
-Consider the data in the following table, recorded over a month with 30 days by our data scientist. On each day he recorded whether it was sunny (S), or not (NS), and whether his mood was good (G), or not (NG).
-<img src="x.png" width=300>
+Consider the data in the following table, recorded over a month with 30 days by our data scientist. On each day he recorded whether it was sunny or Cloudy, and whether his mood was good or not.
+
+|           | Sunny weather | Cloudy weather |
+|-----------|----------------|---------------|
+| Good mood | 9              | 6             |
+| Bad mood  | 1              | 14            |
 
 He wants to now know if his mood had anything to do with the weather on a particular day and how can he calculate the probability of having a good mood given the weather conditions. 
 
 
-#### If he picked a day at random from the 30 days on record, what is the probability that he was in a good mood on that day, P(G)? 
+### If he picked a day at random from the 30 days on record, what is the probability that he was in a good mood on that day, $P(G)$? 
 
-* The sample space is the 30 days under discussion. 
-* He was in a good mood on 9 + 6 = 15 of them so P(G) = 15/30 = 0.5
+* The sample space is 30 days here
+* The event space is "good mood", so $9 + 6 = 15$.
+* $P(G) = \dfrac{15}{30} = 0.5$
 
-#### What is the probability that the day chosen was a Sunny day, P(S)?
+### What is the probability that the day chosen was a Sunny day, $P(S)$?
 
-* The sample space is still the 30 days under discussion. 
-* It was sunny on 9 + 1 = 10 of them so P(S) = 10/30 ≈ 0.33
+* The sample space is still 30 days
+* It was sunny on $9 + 1 = 10$
+* $P(S) = \dfrac{15}{30} = 0.333$
 
-#### What is probability of having a good mood given its a sunny day  P(G|S) ?
+### What is probability of having a good mood given its a sunny day  $P(G \mid S)$ ?
 
-* P(G|S) = P(G ∩ S) / P(S), hence we need to calculate P(G ∩ S) first. 
-* Here the sample space is still the 30 days
-* G ∩ S consists of sunny days in which he is in a good mood and there were 9 of them. Hence P(G ∩ S) = 9/30
-* Therefore P(G|S) = (9/30)/(10/30) = 0.9
+* $P(G \mid S) = \dfrac{P(G \cap S)}{ P(S)}$, so we need to calculate $P(G \cap S)$ first. 
 
-The info-graphic had some truth in it indeed. There's a 90% chance that our curious data scientist would be in good mood given its a sunny day.  The outcome of this experiment is comforting for our data scientist and calls this a successful experiment. Surfing the Internet, he comes across another piece of information, although not very scientific, raises his curiosity further. 
+* $P(G \cap S)$ consists of sunny days in which he is in a good mood. There were 9 of them, so $P(G \cap S) = \dfrac{9}{30}$
+* Therefore $P(G \mid S) =\dfrac{\frac{9}{30}}{\frac{10}{30}} = 0.9 $
 
-<img src="mood2.jpg" width=600>
+The info-graphic had some truth in it indeed. There's a $90%$ chance that our curious data scientist would be in good mood on a sunny day.  
 
+The data scientist is satisfied and thinks the outcome is comforting. 
+
+Surfing the Internet, however, he comes across another piece of information. Although not very scientific, this raises his curiosity further. 
+
+<img src="images/mood2.jpg" width="600"> 
+ 
 What if .... ?
 
-#### Now the data scientist wants to know weather his mood had any impact on the weather.  What is P(S|G)
+### Now the data scientist wants to know weather his mood had any impact on the weather.  What is $P(S \mid G)$
 
-P(S|G) = P(G ∩ S)/P(G) = (9/30)/(15/30) = .6
+$P(S \mid G) =\dfrac{P(G \cap S)}{ P(G)} = \dfrac{\frac{9}{30}}{\frac{15}{30}} = 0.6$
 
-He finds that the probability is slightly higher than random chance. So in other words theres a 60% chance that it will be all nice and sunny if he is in a good mood. 
+He finds that the probability is slightly higher than random chance (50%). So in other words theres a 60% chance that it will be all nice and sunny given that he is in a good mood. 
 
-He also realizes that P(G|S) is not equal to P(S|G). So does this mean that weather has a higher impact over his mood than his mood has over the weather. 
-<img src="whaaat.jpg" width=300>
-
-
-Note that if we discover that P(A|B) is not equal to P(A), it  does not necessarily mean a cause effect relationship. In the example above, the weather and other such external conditions can have a positive effect on human mood and behavior, and this can be said with reference to literature. however it is unlikely that mood has any effect on weather, we do not have any scientific evidence to support this notion. 
-
-Here we see that one can only go so far with Frequentist probabilities i.e. counting number of occurrences (frequencies) to work out the probability of an event. Frequentist methods do not allow the experimenter to augment his beliefs or other prior knowledge he has to an experimental design. So the experimenter would be mainly stuck with what he has observed. 
-
-#### Say Hello to Reverend Thomas Bayes
+He also realizes that $P(G \mid S)$ is not equal to $P(S \mid G)$ . So does this mean that weather has a higher impact on his mood than his mood has on the weather. 
+<img src="images/whaaat.jpg" width="300">
 
 
-<img src="bayes.jpg" width=300>
+Note that the word "impact" doesn't really make sense. Our mood doesn't *cause* the weather, so there is no cause-effect relationship. In the example above, the weather and other such external conditions can have a positive effect on human mood and behavior, and this can be said with reference to literature. however it is unlikely that mood has any effect on weather, there is no scientific evidence to support this notion (and it's very unlikely that there will ever be). What is true, however, is that there is a relationship between weather and mood.
 
-See the P(A) in the equation trying to calculate P(A|B), this is called "The Prior" and let's us add our prior knowledge to a learning process, and is the very foundation of predictive machine learning algorithms. 
+
+### Say Hello to Reverend Thomas Bayes
+
+<img src="images/bayes.jpg" width="300">
+
+See the P(A) in the equation trying to calculate $P(A \mid B)$, this is called "The Prior" and let's  add our prior knowledge to a learning process, and is the very foundation of predictive machine learning algorithms. 
 
 Our data scientist realizes that he needs to learn a bit of Bayesian reasoning in order to get more meaningful results. And that is exactly what we will discuss in this section. First we need to cover a few topics to fully understand how this simple equation lets you do some serious predictive analysis. Let's do a few exercises next to get a good grip of conditional probability calculations.
 
