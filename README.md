@@ -1,79 +1,96 @@
 
-# Conditional Probability 
+# Conditional Probability 
 
 ## Introduction
 
-Conditional Probability is an important part of learning Statistics, which is mandatory in order to eventually understand and practice Machine Learning and Artificial Intelligence. In this lesson, we shall talk about conditional probability, how and when to use it and what benefits does it carry towards analytical tasks. We shall later see how this simple idea becomes a key component in most statistical machine learning algorithms. 
 
-## Objectives:
+In the previous lessons and labs, you learned about some fundamentals of probability theory, along with basic combinatorics such as permutations and combitations. You'll now extend your knowledge on probability by learning about **Conditional Probability**. You'll see how Conditional Probability is extremely important in Statistics, and the foundation of many applications. Understanding conditional probability is essential when exloring fields in Machine Learning and Artificial Intelligence.
+
+In this lesson, you'll learn about conditional probability, what it is, and how and when to use it. Later on, you'll see how this simple idea becomes a key component in most statistical machine learning algorithms. 
+
+## Objectives 
 You will be able to:
 
 * Differentiate between independent and dependent random events 
-* Understand and Explain the conditional probability - P(A∩B) = P(A|B) x P(B)
+* Understand and Explain the conditional probability: $P(A \cap B) = P(A\mid B)*P(B) $
 * Use the multiplication rule to find the probability of the intersection of two events
 * Understand and describe some important theorems based on conditional probabilities
 
-Let's quickly recap some of the basic ideas and terms which we shall later use in describing conditional probability use cases. 
-
 ## Events and Sample Space
 
-An **Event** is the outcome of a random experiment e.g. watching heads on tossing of a coin, or getting 3 after a dice roll are events.  We need to specify the sample space and the events to compute event probability. An event may 
-also be collection of different events grouped together e.g. rolling a dice 4 times.  
+Before introducing you to to specific event types, let's do a quick recap of the notion of event and sample space.
 
-A **Sample space** is a collection of every single possible outcome in a trial. In more formal mathematics the entire sample space is represented as an uppercase omega, $\Omega$. For example, sample space for random throw of a die is {1,2,3,4,5,6}. One of these will undoubtedly happen in the event of throwing a die. The sample space depicts each one of the conceivable outcomes that can happen when the experiment is performed.
+An **event** is the outcome of an experiment, for example, obtaining heads when tossing of a coin or getting 3 after a dice roll. Note: an event can also be a collection of different events grouped together (or a so-called **compound** event), eg. getting a 3 twice when rolling a dice twice.  
 
-Events in a sample could be either **dependent** or **independent**. For two events P and Q, the chance that the occurring of event P doesn’t influence the occurring of event Q, these events are called as independent events. If the P occurrence of P is somehow dependent on occurrence of Q , P would be dependent on Q (think temporal data). 
+A **eample space** is a collection of every single possible outcome in a trial, generally represented by $\Omega$. 
+The sample space for 1 random dice throw is  {1,2,3,4,5,6}. 
 
 
+As you remember for the previous lessons, we can combine event and sample space to compute event probability.
+
+You'll learn about 3 important event types: **independent**, **disjunct**, and **dependent** events.
 
 ### Independent Events
 
+** Events $A$ and $B$ are independent when, the occurrence of $A$ has no effect on whether $B$ will occur (or not).**
+
 Consider following independent events 
 
-* Getting heads after flipping a coin AND getting a 5 on throw of a fair die.
-* Choosing a marble from a container AND getting heads in the flipping of a coin 
+* Getting heads after flipping a coin **and** getting a 5 on throw of a fair dice
+* Choosing a marble from a container **and** getting heads after flipping a coin
 
-> Events A and B are __independent__ if $P(A \cap B) = P(A)P(B)$, and $P (A \cup B) = P(A) + P(B) -P(A \cap B)$  Remember that event A tells us nothing about event B.
+#### Two independent events
 
-![](ind1.jpg)
-What about the case of three events A, B and C?
+Formally, events A and B are independent if 
+- $P(A \cap B) = P(A)P(B)$,  and
+- $P (A \cup B) = P(A) + P(B) - P(A\cap B)$  
 
-> Events A, B and C are __independent__ if 
->
-> \begin\{align\}
->     P(A \cap B) &= P(A)P(B), P(A \cap C) = P(A)P(C), P(B \cap C) = P(B)P(C) \\\\
->     P(A \cap B \cap C) &= P(A)P(B)P(C)
-> \end\{align\}
->
-> So you need both _pair-wise independence and three-way independence_.
+![](images/ind1.jpg)
 
+#### Three independent events
+Three events A, B and C if
 
+- $P(A \cap B) = P(A)P(B)$ 
+- $P(A \cap C) = P(A)P(C)$ 
+- $P(B \cap C) = P(B)P(C)$
+- $P(A \cap B \cap C) = P(A)P(B)P(C)$
+ 
+So you need both *pairwise independence* and *three-way independence*
 
+### Disjoint Events
 
-In contrast, events A and B are __disjoint__ if A occurring means that B cannot occur.
+**Events $A$ and $B$ are disjoint if $A$ occurring means that $B$ cannot occur.**
 
-![](disj.jpg)
+Disjoint events are **mutually exclusive**. $P (A \cap B)$ is **empty**.
 
-
-
+![](images/disj.jpg)
 
 ### Dependent Events 
 
-When probability of occurrence of event A is somehow dependent or connected to occurrence of B, these become dependent events and this is where things start getting a bit more interesting. 
+** Events $A$ and $B$ are dependent when, the occurrence of $A$ somehow has an effect on whether $B$ will occur (or not).**
 
-Consider this example, we characterize event A as getting a Red or Blue marble from the jug containing 3 red and 2 blue marbles (see image below).
+Now things start getting a bit more interesting. 
 
-<img src="marb.svg" width = 300>
+Let's look at an example. Let's say event $A$ is taking a red or blue marble out of a jar. The jar contains 3 red and 2 blue marbles. 
 
-So the probability of getting a blue marble would initially be 2/5 and getting a red marble would be 3/5.
+<img src="images/marb.svg" width="300">
 
-<img src="cond3.gif" width = 300>
-We at that point keep the marble out and after that take another marble from the jug. Here you can see that our second event is dependent on the outcome of first trial. IF we had a red marble in trial 1, the probability of getting a blue marble in trial 2 is 2/4. However, if we saw a blue marble in the first trial, the probability of seeing a blue in second trial becomes 1/4 etc. In simple terms, the probability of seeing an event B  in the second trial depends on the outcome A of the first trial , OR, P(B) is **conditional** on P(A).
+The probability of getting a blue marble is $\dfrac{2}{5}$ and getting a red marble is $\dfrac{3}{5}$.
 
-A **tree diagram** can be used to explain this for all possible events.
+<img src="images/cond3.gif" width="300">
 
+At that point, one marble is taken out and we now take another marble from the jar (event $B$).
 
-<img src="tree.gif" width = 500>
+Here you can see that our second event is dependent on the outcome of first draw.
+
+- If we drew a red marble first, the probability of getting a blue marble for event B is $\dfrac{2}{4}$. 
+- If we saw a blue marble first, however, the probability of seeing a blue in second trial is $\dfrac{1}{4}$. 
+
+In simple terms, the probability of seeing an event $B$ in the second trial depends on the outcome $A$ of the first trial. We say that $P(B)$ is **conditional** on $P(A)$.
+
+A **tree diagram** can be used to explore all possible events.
+
+<img src="images/tree.gif" width = 500>
 
 ## Conditional Probability 
 
@@ -90,28 +107,26 @@ If we consider event with P(A) as the probability of the event we are attempting
 Event B is the condition that we know or the event that has happened.
 
 We can compose the conditional probability (Probability of A **GIVEN** B) as :
-
-
-<img src="cond2.png" width=300>
+$$ P (A \mid B) = \dfrac{P(A \cap B)}{P(B)}$$
 
 
 > **P(A|B)**, the probability of the taking place of event A **given** that B has just happened. 
 
-<img src="cond4.png" width=300>
+<img src="images/cond4.png" width=300>
 
 Here’s how to derive the conditional probability equation shown above from the multiplication rule:
 
 Step 1: Write out the multiplication rule:
-* **P(A and B) = P(B)*P(A|B)**
+* $P(A \cap B)= P(B)*P(A\mid B)$
 
 Step 2: Divide both sides of the equation by P(B):
-* **P(A and B) / P(B) = P(B)*P(A|B) / P(B)**
+* $\dfrac{P(A \cap B)}{ P(B)} = \dfrac{P(B)*P(A\mid B)}{P(B)}$
 
 Step 3: Cancel P(B) on the right side of the equation:
-* **P(A and B) / P(B) = P(A|B)**
+* $\dfrac{P(A \cap B)}{P(B)} = P(A \mid B)$
 
-Step 4: Rewrite the equation:
-* **P(A|B) = P(A and B) / P(B)**
+Step 4: This is of course equal to:
+* $ P(A \mid B)=\dfrac{P(A \cap B)}{P(B)} $
 
 And this is our conditional probability formula. Here we shall quickly summarize some variations and theorems which emerge from conditional probability that will be used for reference in later lessons. 
 
@@ -130,7 +145,6 @@ The two probabilities always add to 1
 * P(A) + P(A') = 1
 
 >  **Similarly P(A|B) + P(A'|B) = 1**
-
 
 ## Theorem 1 - Product Rule
 The **Product rule** is useful when the conditional probability is easy to compute, but the probability of intersections of events are not. 
