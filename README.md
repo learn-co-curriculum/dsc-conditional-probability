@@ -71,7 +71,7 @@ Disjoint events are **mutually exclusive**. $P (A \cap B)$ is **empty**.
 
 Now things start getting a bit more interesting. 
 
-Let's look at an example. Let's say event $A$ is taking a red or blue marble out of a jar. The jar contains 3 red and 2 blue marbles. 
+Let's look at an example. To explain this example, we used images from this [mathisfun.com](https://www.mathsisfun.com/data/probability-events-conditional.html)-page. Let's say event $A$ is taking a red or blue marble out of a jar. The jar contains 3 red and 2 blue marbles. 
 
 <img src="images/marb.svg" width="300">
 
@@ -96,7 +96,7 @@ A **tree diagram** can be used to explore all possible events.
 
 **Conditional probability emerges when the outcome a trial may influence the results of the upcoming trials.**
 
-While calculating the probability of the second event (event $B$) given that the primary event (event $A$) has just happened, we say that the probability of event B is relies on the occurrence of event A.
+While calculating the probability of the second event (event $B$) given that the primary event (event $A$) has just happened, we say that the probability of event $B$ is relies on the occurrence of event $A$.
 
 Here are some more examples: 
 
@@ -106,12 +106,12 @@ Here are some more examples:
 
 Let's say that $P(A)$ is the event we are interested in, and this event depends on a certain event $B$ that has happened. 
 
-The conditional probability (Probability of A **given** B) can be written as:
+The conditional probability (Probability of $A$ **given** $B$) can be written as:
 $$ P (A \mid B) = \dfrac{P(A \cap B)}{P(B)}$$
 
 
 
-$P(A|B)$, is the probability A **given** that B has just happened. 
+$P(A|B)$, is the probability A **given** that $B$ has just happened. 
 
 <img src="images/cond4.png" width="300">
 
