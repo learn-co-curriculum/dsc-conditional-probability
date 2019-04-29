@@ -205,64 +205,62 @@ Let's see a very simple use of conditional probability formula. A data scientist
 
 Curious as data scientists are, he starts collecting data about weather conditions and his own mood. 
 
-Consider the data in the following table, recorded over a month with 30 days by our data scientist. On each day he recorded whether it was sunny or Cloudy, and whether his mood was good or not.
+Consider the data in the following table, recorded over a month with 50 days by our data scientist. On each day he recorded whether it was sunny or Cloudy, and whether his mood was good or not.
 
 |           | Sunny weather | Cloudy weather |
 |-----------|----------------|---------------|
-| Good mood | 9              | 6             |
-| Bad mood  | 1              | 14            |
+| Good mood | 14             | 11            |
+| Bad mood  | 2              | 23            |
 
 He wants to now know if his mood had anything to do with the weather on a particular day and how can he calculate the probability of having a good mood given the weather conditions. 
 
 
-### If he picked a day at random from the 30 days on record, what is the probability that he was in a good mood on that day, $P(G)$? 
+### If he picked a day at random from the 50 days on record, what is the probability that he was in a good mood on that day, $P(G)$? 
 
-* The sample space is 30 days here
-* The event space is "good mood", so $9 + 6 = 15$.
-* $P(G) = \dfrac{15}{30} = 0.5$
+* The sample space is 50 days here
+* The event space is "good mood", so $14 + 11 = 25$.
+* $P(G) = \dfrac{25}{50} = 0.5$
 
 ### What is the probability that the day chosen was a Sunny day, $P(S)$?
 
-* The sample space is still 30 days
-* It was sunny on $9 + 1 = 10$
-* $P(S) = \dfrac{15}{30} = 0.333$
+* The sample space is still 50 days
+* It was sunny on $14 + 2 = 16$
+* $P(S) = \dfrac{16}{50} = 0.32$
 
 ### What is probability of having a good mood given its a sunny day  $P(G \mid S)$ ?
 
 * $P(G \mid S) = \dfrac{P(G \cap S)}{ P(S)}$, so we need to calculate $P(G \cap S)$ first. 
 
-* $P(G \cap S)$ consists of sunny days in which he is in a good mood. There were 9 of them, so $P(G \cap S) = \dfrac{9}{30}$
-* Therefore $P(G \mid S) =\dfrac{\frac{9}{30}}{\frac{10}{30}} = 0.9 $
+* $P(G \cap S)$ consists of sunny days in which he is in a good mood. There were 14 of them, so $P(G \cap S) = \dfrac{14}{50}$
+* Therefore $P(G \mid S) =\dfrac{\frac{14}{50}}{\frac{16}{50}} = 0.875 $
 
-The infographic had some truth in it indeed. There's a $90%$ chance that our curious data scientist would be in good mood on a sunny day.  
+The infographic had some truth in it indeed. There's a $87.5%$ chance that our curious data scientist would be in good mood on a sunny day.  
 
 The data scientist is satisfied and thinks the outcome is comforting. 
 
-Surfing the Internet, however, he comes across another piece of information. Although not very scientific, this raises his curiosity further. 
+Surfing the Internet, however, he comes across a Garth Stein quote. Although not very scientific, this raises his curiosity further. The quote goes as follows:
 
-<img src="images/mood2.jpg" width="600"> 
+> $\large \text{"That which is around me does not affect my mood; my mood affects that which is around me"}$
  
-What if .... ?
+What if...?
 
 ### Now the data scientist wants to know if his mood had any impact on the weather.  What is $P(S \mid G)$
 
-$P(S \mid G) =\dfrac{P(G \cap S)}{ P(G)} = \dfrac{\frac{9}{30}}{\frac{15}{30}} = 0.6$
+$P(S \mid G) =\dfrac{P(G \cap S)}{ P(G)} = \dfrac{\frac{14}{50}}{\frac{25}{50}} = 0.56$
 
-He finds that the probability is slightly higher than random chance (50%). So in other words there's a 60% chance that it will be all nice and sunny given that he is in a good mood. 
+He finds that the probability is slightly higher than random chance (50%). In other words, there's a 56% chance that it will be all nice and sunny given that he is in a good mood. 
 
-He also realizes that $P(G \mid S)$ is not equal to $P(S \mid G)$ . So does this mean that weather has a higher impact on his mood than his mood has on the weather. 
-<img src="images/whaaat.jpg" width="300">
+He also realizes that $P(G \mid S)$ is not equal to $P(S \mid G)$ . So does this mean that weather has a higher impact on his mood than his mood has on the weather...?
 
-
-Note that the word "impact" doesn't really make sense. Our mood doesn't *cause* the weather, so there is no cause-effect relationship. In the example above, the weather and other such external conditions can have a positive effect on human mood and behavior, and this can be said with reference to literature. however it is unlikely that mood has any effect on weather, there is no scientific evidence to support this notion (and it's very unlikely that there will ever be). What is clear, however, is that there is a relationship between weather and mood.
-
+This doesn't really make sense. Our mood doesn't *cause* the weather, so there is no cause-effect relationship. In the example above, the weather and other such external conditions can have a positive effect on human mood and behavior, and this can be said with reference to literature. however it is unlikely that mood has any effect on weather, there is no scientific evidence to support this notion (and it's very unlikely that there will ever be). What is clear, however, is that there is a relationship between weather and mood.
 
 ### Say Hello to Reverend Thomas Bayes
 
-<img src="images/bayes.jpg" width="300">
+<img src="images/Thomas_Bayes.gif" width="300">
 
 
-Bayes theorem is a very foundational theorem that uses the fact that $P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)$. Note that, using Bayes theorem, you can compute conditional probabilities without explicitly needing to know $P(A \cap B)$! 
+Bayes theorem ([Image source here](https://commons.wikimedia.org/wiki/File:Thomas_Bayes.gif))
+is a very foundational theorem that uses the fact that $P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)$. Note that, using Bayes theorem, you can compute conditional probabilities without explicitly needing to know $P(A \cap B)$! 
 
 This theorem is extremely important in many machine learning algorithms.
 
