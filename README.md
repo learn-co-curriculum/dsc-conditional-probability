@@ -45,7 +45,7 @@ Formally, events A and B are independent if
 - $P(A \cap B) = P(A)P(B)$,  and
 - $P (A \cup B) = P(A) + P(B) - P(A\cap B)$  
 
-![](images/ind1.jpg)
+![](images/Image_67_independent.png)
 
 #### Three independent events
 Three events A, B and C if
@@ -63,7 +63,7 @@ So you need both *pairwise independence* and *three-way independence*
 
 Disjoint events are **mutually exclusive**. $P (A \cap B)$ is **empty**.
 
-![](images/disj.jpg)
+![](images/Image_68Disjoint.png)
 
 ### Dependent Events 
 
@@ -71,26 +71,26 @@ Disjoint events are **mutually exclusive**. $P (A \cap B)$ is **empty**.
 
 Now things start getting a bit more interesting. 
 
-Let's look at an example. To explain this example, we used images from this [mathisfun.com](https://www.mathsisfun.com/data/probability-events-conditional.html)-page. Let's say event $A$ is taking a red or blue marble out of a jar. The jar contains 3 red and 2 blue marbles. 
+Let's look at an example. Let's say event $A$ is taking a orange or purple marble out of a jar. The jar contains 3 orange and 2 purple marbles. 
 
-<img src="images/marb.svg" width="300">
+<img src="images/Image_69_Marb.png" width="300">
 
-The probability of getting a blue marble is $\dfrac{2}{5}$ and getting a red marble is $\dfrac{3}{5}$.
+The probability of getting a purple marble is $\dfrac{2}{5}$ and getting a orange marble is $\dfrac{3}{5}$.
 
-<img src="images/cond3.gif" width="300">
+<img src="images/Image_70_Cond3.png" width="300">
 
 At that point, one marble is taken out and we now take another marble from the jar (event $B$).
 
 Here you can see that our second event is dependent on the outcome of first draw.
 
-- If we drew a red marble first, the probability of getting a blue marble for event B is $\dfrac{2}{4}$. 
-- If we saw a blue marble first, however, the probability of seeing a blue in second trial is $\dfrac{1}{4}$. 
+- If we drew a orange marble first, the probability of getting a purple marble for event B is $\dfrac{2}{4}$. 
+- If we saw a purple marble first, however, the probability of seeing a purple in second trial is $\dfrac{1}{4}$. 
 
 In simple terms, the probability of seeing an event $B$ in the second trial depends on the outcome $A$ of the first trial. We say that $P(B)$ is **conditional** on $P(A)$.
 
 A **tree diagram** can be used to explore all possible events.
 
-<img src="images/tree.gif" width = 500>
+<img src="images/Image_71_TreeDiag.png" width = 500>
 
 ## Conditional Probability 
 
@@ -113,7 +113,7 @@ $$ P (A \mid B) = \dfrac{P(A \cap B)}{P(B)}$$
 
 $P(A|B)$, is the probability A **given** that $B$ has just happened. 
 
-<img src="images/cond4.png" width="300">
+<img src="images/Image_72_Cond4.png" width="300">
 
 
 Understanding this formula may be easier if you look at two simple Venn Diagrams and use the multiplication rule. Here's how to derive this formula:
@@ -201,7 +201,7 @@ $P(A|B) + P(A'|B) = 1$
 
 Let's see a very simple use of conditional probability formula. A data scientist comes across following infographic:
 
-<img src="images/mood.jpg" width="600">
+<img src="images/Image_73_Mood.png" width="600">
 
 Curious as data scientists are, he starts collecting data about weather conditions and his own mood. 
 
@@ -259,8 +259,7 @@ This doesn't really make sense. Our mood doesn't *cause* the weather, so there i
 <img src="images/Thomas_Bayes.gif" width="300">
 
 
-Bayes theorem ([Image source here](https://commons.wikimedia.org/wiki/File:Thomas_Bayes.gif))
-is a very foundational theorem that uses the fact that $P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)$. Note that, using Bayes theorem, you can compute conditional probabilities without explicitly needing to know $P(A \cap B)$! 
+Bayes theorem is a very foundational theorem that uses the fact that $P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)$. Note that, using Bayes theorem, you can compute conditional probabilities without explicitly needing to know $P(A \cap B)$! 
 
 This theorem is extremely important in many machine learning algorithms.
 
@@ -284,3 +283,8 @@ You are strongly advised to visit following links to get an indepth understandin
 ## Summary 
 
 In this lesson, you learned about the conditional probabilities in case you have dependent events in your sample space. You looked at the formula to calculate these probabilities with a brief proof. You also looked at an example to see this concept in action. In the upcoming lessons, you'll build further on these ideas towards having a clear understanding of Bayesian Logic and its role in machine learning. 
+
+
+```python
+
+```
