@@ -22,7 +22,7 @@ Before introducing you to to specific event types, let's do a quick recap of the
 
 An **event** is the outcome of an experiment, for example, obtaining heads when tossing of a coin or getting 3 after a dice roll. Note: an event can also be a collection of different events grouped together (or a so-called **compound** event), eg. getting a 3 twice when rolling a dice twice.  
 
-A **eample space** is a collection of every single possible outcome in a trial, generally represented by $\Omega$. 
+A **sample space** is a collection of every single possible outcome in a trial, generally represented by $\Omega$. 
 The sample space for 1 random dice throw is  {1,2,3,4,5,6}. 
 
 
@@ -207,7 +207,7 @@ Curious as data scientists are, he starts collecting data about weather conditio
 
 Consider the data in the following table, recorded over a month with 50 days by our data scientist. On each day he recorded whether it was sunny or Cloudy, and whether his mood was good or not.
 
-|           | Sunny weather | Cloudy weather |
+| &nbsp;    | Sunny weather  | Cloudy weather|
 |-----------|----------------|---------------|
 | Good mood | 14             | 11            |
 | Bad mood  | 2              | 23            |
