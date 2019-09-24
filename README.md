@@ -4,7 +4,7 @@
 ## Introduction
 
 
-In the previous lessons and labs, you learned about some fundamentals of probability theory, along with basic combinatorics such as permutations and combinations. You'll now extend your knowledge on probability by learning about **Conditional Probability**. You'll see how Conditional Probability is extremely important in Statistics, and the foundation of many applications. Understanding conditional probability is essential when exploring fields in Machine Learning and Artificial Intelligence.
+In the previous lessons and labs, you learned about some fundamentals of probability theory, along with basic combinatorics such as permutations and combinations. You'll now extend your knowledge of probability by learning about **Conditional Probability**. You'll see how Conditional Probability is extremely important in Statistics, and the foundation of many applications. Understanding conditional probability is essential when exploring fields in Machine Learning and Artificial Intelligence.
 
 In this lesson, you'll learn about conditional probability, what it is, and how and when to use it. Later on, you'll see how this simple idea becomes a key component in most statistical machine learning algorithms. 
 
@@ -18,25 +18,25 @@ You will be able to:
 
 ## Events and Sample Space
 
-Before introducing you to to specific event types, let's do a quick recap of the notion of event and sample space.
+Before introducing you to specific event types, let's do a quick recap of the notion of event and sample space.
 
-An **event** is the outcome of an experiment, for example, obtaining heads when tossing of a coin or getting 3 after a dice roll. Note: an event can also be a collection of different events grouped together (or a so-called **compound** event), eg. getting a 3 twice when rolling a dice twice.  
+An **event** is the outcome of an experiment, for example, obtaining heads when tossing of a coin or getting 3 after a dice roll. Note: an event can also be a collection of different events grouped together (or a so-called **compound** event), e.g. getting a 3 twice when rolling a dice twice.  
 
 A **sample space** is a collection of every single possible outcome in a trial, generally represented by $\Omega$. 
 The sample space for 1 random dice throw is  {1,2,3,4,5,6}. 
 
 
-As you remember for the previous lessons, we can combine event and sample space to compute event probability.
+As you remember for the previous lessons, we can combine events and sample space to compute event probability.
 
-You'll learn about 3 important event types: **independent**, **disjunct**, and **dependent** events.
+You'll learn about 3 important event types: **independent**, **disjoint**, and **dependent** events.
 
 ### Independent Events
 
-** Events $A$ and $B$ are independent when, the occurrence of $A$ has no effect on whether $B$ will occur (or not).**
+**Events $A$ and $B$ are independent when the occurrence of $A$ has no effect on whether $B$ will occur (or not).**
 
-Consider following independent events 
+Consider the following independent events 
 
-* Getting heads after flipping a coin **and** getting a 5 on throw of a fair dice
+* Getting heads after flipping a coin **and** getting a 5 after throwing a fair dice
 * Choosing a marble from a container **and** getting heads after flipping a coin
 
 #### Two independent events
@@ -67,24 +67,24 @@ Disjoint events are **mutually exclusive**. $P (A \cap B)$ is **empty**.
 
 ### Dependent Events 
 
-** Events $A$ and $B$ are dependent when, the occurrence of $A$ somehow has an effect on whether $B$ will occur (or not).**
+**Events $A$ and $B$ are dependent when the occurrence of $A$ somehow has an effect on whether $B$ will occur (or not).**
 
 Now things start getting a bit more interesting. 
 
-Let's look at an example. Let's say event $A$ is taking a orange or purple marble out of a jar. The jar contains 3 orange and 2 purple marbles. 
+Let's look at an example. Let's say event $A$ is taking an orange or purple marble out of a jar. The jar contains 3 orange and 2 purple marbles. 
 
 <img src="images/Image_69_Marb.png" width="300">
 
-The probability of getting a purple marble is $\dfrac{2}{5}$ and getting a orange marble is $\dfrac{3}{5}$.
+The probability of getting a purple marble is $\dfrac{2}{5}$ and getting an orange marble is $\dfrac{3}{5}$.
 
 <img src="images/Image_70_Cond3.png" width="300">
 
 At that point, one marble is taken out and we now take another marble from the jar (event $B$).
 
-Here you can see that our second event is dependent on the outcome of first draw.
+Here you can see that our second event is dependent on the outcome of the first draw.
 
-- If we drew a orange marble first, the probability of getting a purple marble for event B is $\dfrac{2}{4}$. 
-- If we saw a purple marble first, however, the probability of seeing a purple in second trial is $\dfrac{1}{4}$. 
+- If we drew an orange marble first, the probability of getting a purple marble for event B is $\dfrac{2}{4}$. 
+- If we saw a purple marble first, however, the probability of seeing a purple in the second trial is $\dfrac{1}{4}$. 
 
 In simple terms, the probability of seeing an event $B$ in the second trial depends on the outcome $A$ of the first trial. We say that $P(B)$ is **conditional** on $P(A)$.
 
@@ -96,12 +96,12 @@ A **tree diagram** can be used to explore all possible events.
 
 **Conditional probability emerges when the outcome a trial may influence the results of the upcoming trials.**
 
-While calculating the probability of the second event (event $B$) given that the primary event (event $A$) has just happened, we say that the probability of event $B$ is relies on the occurrence of event $A$.
+While calculating the probability of the second event (event $B$) given that the primary event (event $A$) has just happened, we say that the probability of event $B$ relies on the occurrence of event $A$.
 
 Here are some more examples: 
 
 * Drawing a 2nd Ace from a deck of cards given that the first card you drew was an Ace.
-* Finding the probability of liking "the Matrix" given that you known this person likes science fiction.
+* Finding the probability of liking "the Matrix" given that you know this person likes science fiction.
 
 
 Let's say that $P(A)$ is the event we are interested in, and this event depends on a certain event $B$ that has happened. 
@@ -138,7 +138,7 @@ There are a few variations and theorems that are related to and/or results of th
 
 ### Theorem 1 - Product Rule
 
-The **product rule** was used to derive the conditional probability formula above, but often used as is in situations where the conditional probability is easy to compute, but the probability of intersections of events isn't. 
+The **product rule** was used to derive the conditional probability formula above, but is often used in situations where the conditional probability is easy to compute, but the probability of intersections of events isn't. 
 
 The intersection of events $A$ and $B$ can be given by
 
@@ -174,7 +174,7 @@ P(A) = P(A \mid C_1)P(C_1) + P(A \mid C_2)P(C_2) + \ldots + P(A \mid C_m)P(C_m)
 
 ### Theorem 3 - Bayes Theorem
 
-The **Bayes theorem**, which is the outcome of this section. Below is the formula that we will dig deeper into , in upcoming lessons.
+The **Bayes theorem**, which is the outcome of this section. Below is the formula that we will dig deeper into in upcoming lessons.
 
 \begin{align}
     P(A|B) = \frac{P(B|A)P(A)}{P(B)} \text{-        this follows from Theorem 1}
@@ -185,7 +185,7 @@ The **Bayes theorem**, which is the outcome of this section. Below is the formul
 
 ### Additional note: the complement of an event
 
-You learned about (absolute and relative) complements before, but in the complement of an event is also extendible to conditional probabilities.
+You learned about (absolute and relative) complements before, but the complement of an event is also applicable to conditional probabilities.
 
 The basic rule is:
 
@@ -199,7 +199,7 @@ $P(A|B) + P(A'|B) = 1$
 
 ## Example : An Aspiring Data Scientist's Dilemma
 
-Let's see a very simple use of conditional probability formula. A data scientist comes across following infographic:
+Let's see a very simple use of the conditional probability formula. A data scientist comes across the following infographic:
 
 <img src="images/Image_73_Mood.png" width="600">
 
@@ -212,7 +212,7 @@ Consider the data in the following table, recorded over a month with 50 days by 
 | Good mood | 14             | 11            |
 | Bad mood  | 2              | 23            |
 
-He wants to now know if his mood had anything to do with the weather on a particular day and how can he calculate the probability of having a good mood given the weather conditions. 
+He wants to now know if his mood had anything to do with the weather on a particular day and how he can calculate the probability of having a good mood given the weather conditions. 
 
 
 ### If he picked a day at random from the 50 days on record, what is the probability that he was in a good mood on that day, $P(G)$? 
@@ -227,7 +227,7 @@ He wants to now know if his mood had anything to do with the weather on a partic
 * It was sunny on $14 + 2 = 16$
 * $P(S) = \dfrac{16}{50} = 0.32$
 
-### What is probability of having a good mood given its a sunny day  $P(G \mid S)$ ?
+### What is the probability of having a good mood given it's a sunny day  $P(G \mid S)$ ?
 
 * $P(G \mid S) = \dfrac{P(G \cap S)}{ P(S)}$, so we need to calculate $P(G \cap S)$ first. 
 
@@ -250,9 +250,9 @@ $P(S \mid G) =\dfrac{P(G \cap S)}{ P(G)} = \dfrac{\frac{14}{50}}{\frac{25}{50}} 
 
 He finds that the probability is slightly higher than random chance (50%). In other words, there's a 56% chance that it will be all nice and sunny given that he is in a good mood. 
 
-He also realizes that $P(G \mid S)$ is not equal to $P(S \mid G)$ . So does this mean that weather has a higher impact on his mood than his mood has on the weather...?
+He also realizes that $P(G \mid S)$ is not equal to $P(S \mid G)$. So does this mean that weather has a higher impact on his mood than his mood has on the weather...?
 
-This doesn't really make sense. Our mood doesn't *cause* the weather, so there is no cause-effect relationship. In the example above, the weather and other such external conditions can have a positive effect on human mood and behavior, and this can be said with reference to literature. however it is unlikely that mood has any effect on weather, there is no scientific evidence to support this notion (and it's very unlikely that there will ever be). What is clear, however, is that there is a relationship between weather and mood.
+This doesn't really make sense. Our mood doesn't *cause* the weather, so there is no cause-effect relationship. In the example above, the weather and other such external conditions can have a positive effect on human mood and behavior, and this can be said with reference to literature. However, it is unlikely that mood has any effect on weather. There is no scientific evidence to support this notion (and it's very unlikely that there will ever be). What is clear, however, is that there is a relationship between weather and mood.
 
 ### Say Hello to Reverend Thomas Bayes
 
@@ -264,27 +264,22 @@ Bayes theorem is a very foundational theorem that uses the fact that $P(A \cap B
 This theorem is extremely important in many machine learning algorithms.
 
 
-Our data scientist realizes that he needs to learn a bit of Bayesian reasoning in order to get more meaningful results. And that is exactly what we will discuss further. First we need to cover a few topics to fully understand how this simple equation lets you do some serious predictive analysis. 
+Our data scientist realizes that he needs to learn a bit of Bayesian reasoning in order to get more meaningful results. And that is exactly what we will discuss further. First, we need to cover a few topics to fully understand how this simple equation lets you do some serious predictive analysis. 
 
-You'll do a few exercises next to get a good grip of conditional probability calculations.
+You'll do a few exercises next to get a good grip on conditional probability calculations.
 
 ## Additional Resources
 
-You are strongly advised to visit following links to get an indepth understanding with examples and proofs for formulas highlighted in this lesson. 
+You are strongly advised to visit the following links to get an in-depth understanding with examples and proofs for explaining the formulas highlighted in this lesson. 
 
 [Conditional probability, Independence and Bayes rule](http://faculty.arts.ubc.ca/vmarmer/econ327/327_02_cond_probability.pdf) - A deeper mathematical explanation around Independence and theorems we have seen above (and some we shall cover in upcoming lessons)
 
 [Tree Diagrams](https://www.mathsisfun.com/data/probability-tree-diagrams.html) - Drawing tree diagrams to calculate conditional probability
 
-[Conditional Probability, Examples and simple exercises](https://www.mathgoodies.com/lessons/vol6/conditional) - Practice around probability calculations
+[Conditional Probability, Examples and simple exercises](https://www.mathgoodies.com/lessons/vol6/conditional) - Practice with probability calculations
 
 [Conditional probability: A visual explanation](http://setosa.io/conditional/) - A great little interactive animation to explain how conditional probability works
 
 ## Summary 
 
 In this lesson, you learned about the conditional probabilities in case you have dependent events in your sample space. You looked at the formula to calculate these probabilities with a brief proof. You also looked at an example to see this concept in action. In the upcoming lessons, you'll build further on these ideas towards having a clear understanding of Bayesian Logic and its role in machine learning. 
-
-
-```python
-
-```
