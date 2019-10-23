@@ -11,10 +11,9 @@ In this lesson, you'll learn about conditional probability, what it is, and how 
 ## Objectives 
 You will be able to:
 
-* Differentiate between independent and dependent random events 
-* Understand and Explain the conditional probability: $P(A \cap B) = P(A\mid B)P(B) $
+* Differentiate between independent and dependent events
 * Use the multiplication rule to find the probability of the intersection of two events
-* Understand and describe some important theorems based on conditional probabilities
+* Use conditional probability to explain the Product Rule, Chain Rule, and Bayes Theorem
 
 ## Events and Sample Space
 
@@ -282,4 +281,4 @@ You are strongly advised to visit the following links to get an in-depth underst
 
 ## Summary 
 
-In this lesson, you learned about the conditional probabilities in case you have dependent events in your sample space. You looked at the formula to calculate these probabilities with a brief proof. You also looked at an example to see this concept in action. In the upcoming lessons, you'll build further on these ideas towards having a clear understanding of Bayesian Logic and its role in machine learning. 
+In this lesson, you learned about disjoint, independent, and dependent events, and how to use the addition and multiplication rule to find the probability of the union and intersection of two events, respectively. You also learned how to compute conditional probabilities in case you have dependent events in your sample space, with a step-by-step derivation of the formula used to compute conditional probabilities. You also worked through an example to see this concept in action. Finally, Bayes' theorem was discussed. Later in the course, you'll build further on these ideas towards having a clear understanding of Bayesian Logic and its role in machine learning. Next up, you'll practice solving problems with conditional probability! 
