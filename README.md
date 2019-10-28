@@ -41,10 +41,19 @@ Consider the following independent events
 #### Two independent events
 
 Formally, events A and B are independent if 
-- $P(A \cap B) = P(A)P(B)$,  and
-- $P (A \cup B) = P(A) + P(B) - P(A\cap B)$  
+- $P(A \cap B) = P(A)P(B)$
+
+The probability of A or B occurring, $P (A \cup B)$, is given by the addition rule of probability: 
+
+$$P (A \cup B) = P(A) + P(B) - P(A \cap B).$$
+
+We subtract the intersection of the two events to avoid over-counting. See the diagram below for some intuition:
 
 ![](images/Image_67_independent.png)
+
+Thus, in the case of two independent events, by substitution,
+
+$$P (A \cup B) = P(A) + P(B) - P(A)P(B).$$
 
 #### Three independent events
 Three events A, B and C if
@@ -100,7 +109,7 @@ While calculating the probability of the second event (event $B$) given that the
 Here are some more examples: 
 
 * Drawing a 2nd Ace from a deck of cards given that the first card you drew was an Ace.
-* Finding the probability of liking "the Matrix" given that you know this person likes science fiction.
+* Finding the probability of liking "The Matrix" given that you know this person likes science fiction.
 
 
 Let's say that $P(A)$ is the event we are interested in, and this event depends on a certain event $B$ that has happened. 
