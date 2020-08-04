@@ -150,9 +150,7 @@ The **product rule** was used to derive the conditional probability formula abov
 
 The intersection of events  <img src="https://render.githubusercontent.com/render/math?math=A"> and  <img src="https://render.githubusercontent.com/render/math?math=B"> can be given by
 
-\begin{align}
-    P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)
-\end{align}
+<img src="https://render.githubusercontent.com/render/math?math=P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)">
 
 Remember that if  <img src="https://render.githubusercontent.com/render/math?math=A"> and  <img src="https://render.githubusercontent.com/render/math?math=B"> are independent, then conditioning on  <img src="https://render.githubusercontent.com/render/math?math=B"> means nothing (and vice-versa) so  <img src="https://render.githubusercontent.com/render/math?math=P(A|B) = P(A)"> , and  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B) = P(A) P(B)"> .
 
@@ -176,17 +174,13 @@ This idea is known as the **chain rule**.
 
 If on the other hand you have disjoint events  <img src="https://render.githubusercontent.com/render/math?math=C_1, C_2,...,C_m"> such that  <img src="https://render.githubusercontent.com/render/math?math=C_1 \cup C_2 \cup ···  \cup  C_m = \Omega"> , the probability of any event can be decomposed as:
 
-\begin{align}
-P(A) = P(A \mid C_1)P(C_1) + P(A \mid C_2)P(C_2) + \ldots + P(A \mid C_m)P(C_m)
-\end{align}
+<img src="https://render.githubusercontent.com/render/math?math=P(A) = P(A \mid C_1)P(C_1) + P(A \mid C_2)P(C_2) + \ldots + P(A \mid C_m)P(C_m)">
 
 ### Theorem 3 - Bayes Theorem
 
 The **Bayes theorem**, which is the outcome of this section. Below is the formula that we will dig deeper into in upcoming lessons.
 
-\begin{align}
-    P(A|B) = \frac{P(B|A)P(A)}{P(B)} \text{-        this follows from Theorem 1}
-\end{align}
+<img src="https://render.githubusercontent.com/render/math?math=P(A|B) = \frac {P(B|A)P(A)}{P(B)} \text{ &nbsp;&nbsp;&nbsp; -this follows from Theorem 1} ">
 
 
 
@@ -242,17 +236,17 @@ He wants to now know if his mood had anything to do with the weather on a partic
 *  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S)"> consists of sunny days in which he is in a good mood. There were 14 of them, so  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S) = \dfrac{14}{50}"> 
 * Therefore  <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S) =\dfrac{\frac{14}{50}}{\frac{16}{50}} = 0.875 "> 
 
-The infographic had some truth in it indeed. There's a  <img src="https://render.githubusercontent.com/render/math?math=87.5%"> chance that our curious data scientist would be in good mood on a sunny day.  
+The infographic had some truth in it indeed. There's a 87.5% chance that our curious data scientist would be in good mood on a sunny day.  
 
 The data scientist is satisfied and thinks the outcome is comforting. 
 
 Surfing the Internet, however, he comes across a Garth Stein quote. Although not very scientific, this raises his curiosity further. The quote goes as follows:
 
->  <img src="https://render.githubusercontent.com/render/math?math=\large \text{"That which is around me does not affect my mood; my mood affects that which is around me"}"> 
+> "That which is around me does not affect my mood; my mood affects that which is around me" 
  
 What if...?
 
-### Now the data scientist wants to know if his mood had any impact on the weather.  What is  <img src="https://render.githubusercontent.com/render/math?math=P(S \mid G)"> 
+### Now the data scientist wants to know if his mood had any impact on the weather.  What is <img src="https://render.githubusercontent.com/render/math?math=P(S \mid G)"> 
 
  <img src="https://render.githubusercontent.com/render/math?math=P(S \mid G) =\dfrac{P(G  \cap S)}{ P(G)} = \dfrac{\frac{14}{50}}{\frac{25}{50}} = 0.56"> 
 
