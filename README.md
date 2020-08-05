@@ -3,17 +3,17 @@
 
 ## Introduction
 
-
 In the previous lessons and labs, you learned about some fundamentals of probability theory, along with basic combinatorics such as permutations and combinations. You'll now extend your knowledge of probability by learning about **Conditional Probability**. You'll see how Conditional Probability is extremely important in Statistics, and the foundation of many applications. Understanding conditional probability is essential when exploring fields in Machine Learning and Artificial Intelligence.
 
 In this lesson, you'll learn about conditional probability, what it is, and how and when to use it. Later on, you'll see how this simple idea becomes a key component in most statistical machine learning algorithms. 
 
 ## Objectives 
+
 You will be able to:
 
-* Differentiate between independent and dependent events
-* Use the multiplication rule to find the probability of the intersection of two events
-* Use conditional probability to explain the Product Rule, Chain Rule, and Bayes Theorem
+- Differentiate between independent and dependent events
+- Use the multiplication rule to find the probability of the intersection of two events
+- Use conditional probability to explain the Product Rule, Chain Rule, and Bayes Theorem
 
 ## Events and Sample Space
 
@@ -21,9 +21,7 @@ Before introducing you to specific event types, let's do a quick recap of the no
 
 An **event** is the outcome of an experiment, for example, obtaining heads when tossing of a coin or getting 3 after a dice roll. Note: an event can also be a collection of different events grouped together (or a so-called **compound** event), e.g. getting a 3 twice when rolling a dice twice.  
 
-A **sample space** is a collection of every single possible outcome in a trial, generally represented by  <img src="https://render.githubusercontent.com/render/math?math=\Omega"> . 
-The sample space for 1 random dice throw is  {1,2,3,4,5,6}. 
-
+A **sample space** is a collection of every single possible outcome in a trial, generally represented by  <img src="https://render.githubusercontent.com/render/math?math=\Omega"> . The sample space for 1 random dice throw is  {1,2,3,4,5,6}. 
 
 As you remember for the previous lessons, we can combine events and sample space to compute event probability.
 
@@ -35,28 +33,30 @@ You'll learn about 3 important event types: **independent**, **disjoint**, and *
 
 Consider the following independent events 
 
-* Getting heads after flipping a coin **and** getting a 5 after throwing a fair dice
-* Choosing a marble from a container **and** getting heads after flipping a coin
+- Getting heads after flipping a coin **and** getting a 5 after throwing a fair dice
+- Choosing a marble from a container **and** getting heads after flipping a coin
 
 #### Two independent events
 
-Formally, events A and B are independent if 
+Formally, events A and B are independent if:
+
 -  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B) = P(A)P(B)"> 
 
-The probability of A or B occurring,  <img src="https://render.githubusercontent.com/render/math?math=P (A  \cup B)"> , is given by the addition rule of probability: 
+The probability of A or B occurring, <img src="https://render.githubusercontent.com/render/math?math=P (A  \cup B)"> , is given by the addition rule of probability: 
 
- <img src="https://render.githubusercontent.com/render/math?math=P (A  \cup B) = P(A) %2b P(B) - P(A  \cap B)."> 
+ <img src="https://render.githubusercontent.com/render/math?math=P (A  \cup B) = P(A) %2b P(B) - P(A  \cap B)"> 
 
 We subtract the intersection of the two events to avoid over-counting. See the diagram below for some intuition:
 
-![](images/Image_67_independent.png)
+<img src="images/Image_67_independent.png">
 
 Thus, in the case of two independent events, by substitution,
 
- <img src="https://render.githubusercontent.com/render/math?math=P (A  \cup B) = P(A) %2b P(B) - P(A)P(B)."> 
+<img src="https://render.githubusercontent.com/render/math?math=P (A  \cup B) = P(A) %2b P(B) - P(A)P(B)."> 
 
 #### Three independent events
-Three events A, B and C if
+
+Three events, A, B and C, are independent if:
 
 -  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B) = P(A)P(B)"> 
 -  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap C) = P(A)P(C)"> 
@@ -67,15 +67,15 @@ So you need both *pairwise independence* and *three-way independence*
 
 ### Disjoint Events
 
-**Events  <img src="https://render.githubusercontent.com/render/math?math=A"> and  <img src="https://render.githubusercontent.com/render/math?math=B"> are disjoint if  <img src="https://render.githubusercontent.com/render/math?math=A"> occurring means that  <img src="https://render.githubusercontent.com/render/math?math=B"> cannot occur.**
+**Events <img src="https://render.githubusercontent.com/render/math?math=A"> and <img src="https://render.githubusercontent.com/render/math?math=B"> are disjoint if  <img src="https://render.githubusercontent.com/render/math?math=A"> occurring means that <img src="https://render.githubusercontent.com/render/math?math=B"> cannot occur.**
 
-Disjoint events are **mutually exclusive**.  <img src="https://render.githubusercontent.com/render/math?math=P (A  \cap B)"> is **empty**.
+Disjoint events are **mutually exclusive**. <img src="https://render.githubusercontent.com/render/math?math=P (A  \cap B)"> is **empty**.
 
-![](images/Image_68Disjoint.png)
+<img src="images/Image_68Disjoint.png" width="300">
 
 ### Dependent Events 
 
-**Events  <img src="https://render.githubusercontent.com/render/math?math=A"> and  <img src="https://render.githubusercontent.com/render/math?math=B"> are dependent when the occurrence of  <img src="https://render.githubusercontent.com/render/math?math=A"> somehow has an effect on whether  <img src="https://render.githubusercontent.com/render/math?math=B"> will occur (or not).**
+**Events <img src="https://render.githubusercontent.com/render/math?math=A"> and <img src="https://render.githubusercontent.com/render/math?math=B"> are dependent when the occurrence of <img src="https://render.githubusercontent.com/render/math?math=A"> somehow has an effect on whether <img src="https://render.githubusercontent.com/render/math?math=B"> will occur (or not).**
 
 Now things start getting a bit more interesting. 
 
@@ -108,47 +108,46 @@ While calculating the probability of the second event (event  <img src="https://
 
 Here are some more examples: 
 
-* Drawing a 2nd Ace from a deck of cards given that the first card you drew was an Ace.
-* Finding the probability of liking "The Matrix" given that you know this person likes science fiction.
-
+- Drawing a 2nd Ace from a deck of cards given that the first card you drew was an Ace.
+- Finding the probability of liking "The Matrix" given that you know this person likes science fiction.
 
 Let's say that  <img src="https://render.githubusercontent.com/render/math?math=P(A)"> is the event we are interested in, and this event depends on a certain event  <img src="https://render.githubusercontent.com/render/math?math=B"> that has happened. 
 
 The conditional probability (Probability of  <img src="https://render.githubusercontent.com/render/math?math=A"> **given**  <img src="https://render.githubusercontent.com/render/math?math=B"> ) can be written as:
- <img src="https://render.githubusercontent.com/render/math?math=P (A \mid B) = \dfrac{P(A  \cap B)}{P(B)}"> 
 
+<img src="https://render.githubusercontent.com/render/math?math=P (A \mid B) = \dfrac{P(A  \cap B)}{P(B)}"> 
 
-
- <img src="https://render.githubusercontent.com/render/math?math=P(A|B)"> , is the probability A **given** that  <img src="https://render.githubusercontent.com/render/math?math=B"> has just happened. 
+<img src="https://render.githubusercontent.com/render/math?math=P(A|B)"> , is the probability A **given** that <img src="https://render.githubusercontent.com/render/math?math=B"> has just happened. 
 
 <img src="images/Image_72_Cond4.png" width="300">
-
 
 Understanding this formula may be easier if you look at two simple Venn Diagrams and use the multiplication rule. Here's how to derive this formula:
 
 Step 1: Write out the multiplication rule:
-*  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B)= P(B)*P(A\mid B)"> 
+
+-  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B)= P(B)*P(A\mid B)"> 
 
 Step 2: Divide both sides of the equation by P(B):
-*  <img src="https://render.githubusercontent.com/render/math?math=\dfrac{P(A  \cap B)}{ P(B)} = \dfrac{P(B)*P(A\mid B)}{P(B)}"> 
+
+-  <img src="https://render.githubusercontent.com/render/math?math=\dfrac{P(A  \cap B)}{ P(B)} = \dfrac{P(B)*P(A\mid B)}{P(B)}"> 
 
 Step 3: Cancel P(B) on the right side of the equation:
-*  <img src="https://render.githubusercontent.com/render/math?math=\dfrac{P(A  \cap B)}{P(B)} = P(A \mid B)"> 
+
+-  <img src="https://render.githubusercontent.com/render/math?math=\dfrac{P(A  \cap B)}{P(B)} = P(A \mid B)"> 
 
 Step 4: This is of course equal to:
-*  <img src="https://render.githubusercontent.com/render/math?math=P(A \mid B)=\dfrac{P(A  \cap B)}{P(B)} "> 
+
+-  <img src="https://render.githubusercontent.com/render/math?math=P(A \mid B)=\dfrac{P(A  \cap B)}{P(B)} "> 
 
 And this is our conditional probability formula. 
 
 There are a few variations and theorems that are related to and/or results of this conditional probability formula. The most important ones are: the **product rule**, the **chain rule** and **Bayes Theorem**
 
-
-
 ### Theorem 1 - Product Rule
 
 The **product rule** was used to derive the conditional probability formula above, but is often used in situations where the conditional probability is easy to compute, but the probability of intersections of events isn't. 
 
-The intersection of events  <img src="https://render.githubusercontent.com/render/math?math=A"> and  <img src="https://render.githubusercontent.com/render/math?math=B"> can be given by
+The intersection of events  <img src="https://render.githubusercontent.com/render/math?math=A"> and  <img src="https://render.githubusercontent.com/render/math?math=B"> can be given by:
 
 <img src="https://render.githubusercontent.com/render/math?math=P(A \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)">
 
@@ -182,9 +181,6 @@ The **Bayes theorem**, which is the outcome of this section. Below is the formul
 
 <img src="https://render.githubusercontent.com/render/math?math=P(A|B) = \frac {P(B|A)P(A)}{P(B)} \text{ &nbsp;&nbsp;&nbsp; -this follows from Theorem 1} ">
 
-
-
-
 ### Additional note: the complement of an event
 
 You learned about (absolute and relative) complements before, but the complement of an event is also applicable to conditional probabilities.
@@ -199,7 +195,7 @@ Similarly, extending this to conditional probabilities:
 
  <img src="https://render.githubusercontent.com/render/math?math=P(A|B) %2b P(A'|B) = 1"> 
 
-## Example : An Aspiring Data Scientist's Dilemma
+## Example: An Aspiring Data Scientist's Dilemma
 
 Let's see a very simple use of the conditional probability formula. A data scientist comes across the following infographic:
 
@@ -216,25 +212,23 @@ Consider the data in the following table, recorded over a month with 50 days by 
 
 He wants to now know if his mood had anything to do with the weather on a particular day and how he can calculate the probability of having a good mood given the weather conditions. 
 
-
 ### If he picked a day at random from the 50 days on record, what is the probability that he was in a good mood on that day,  <img src="https://render.githubusercontent.com/render/math?math=P(G)"> ? 
 
-* The sample space is 50 days here
-* The event space is "good mood", so  <img src="https://render.githubusercontent.com/render/math?math=14 %2b 11 = 25"> .
-*  <img src="https://render.githubusercontent.com/render/math?math=P(G) = \dfrac{25}{50} = 0.5"> 
+- The sample space is 50 days here
+- The event space is "good mood", so  <img src="https://render.githubusercontent.com/render/math?math=14 %2b 11 = 25"> .
+-  <img src="https://render.githubusercontent.com/render/math?math=P(G) = \dfrac{25}{50} = 0.5"> 
 
-### What is the probability that the day chosen was a Sunny day,  <img src="https://render.githubusercontent.com/render/math?math=P(S)"> ?
+### What is the probability that the day chosen was a Sunny day, <img src="https://render.githubusercontent.com/render/math?math=P(S)"> ?
 
-* The sample space is still 50 days
-* It was sunny on  <img src="https://render.githubusercontent.com/render/math?math=14 %2b 2 = 16"> 
-*  <img src="https://render.githubusercontent.com/render/math?math=P(S) = \dfrac{16}{50} = 0.32"> 
+- The sample space is still 50 days
+- It was sunny on <img src="https://render.githubusercontent.com/render/math?math=14 %2b 2 = 16"> 
+- <img src="https://render.githubusercontent.com/render/math?math=P(S) = \dfrac{16}{50} = 0.32"> 
 
-### What is the probability of having a good mood given it's a sunny day   <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S)"> ?
+### What is the probability of having a good mood given it's a sunny day <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S)"> ?
 
-*  <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S) = \dfrac{P(G  \cap S)}{ P(S)}"> , so we need to calculate  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S)"> first. 
-
-*  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S)"> consists of sunny days in which he is in a good mood. There were 14 of them, so  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S) = \dfrac{14}{50}"> 
-* Therefore  <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S) =\dfrac{\frac{14}{50}}{\frac{16}{50}} = 0.875 "> 
+-  <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S) = \dfrac{P(G  \cap S)}{ P(S)}"> , so we need to calculate  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S)"> first. 
+-  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S)"> consists of sunny days in which he is in a good mood. There were 14 of them, so  <img src="https://render.githubusercontent.com/render/math?math=P(G  \cap S) = \dfrac{14}{50}"> 
+- Therefore  <img src="https://render.githubusercontent.com/render/math?math=P(G \mid S) =\dfrac{\frac{14}{50}}{\frac{16}{50}} = 0.875 "> 
 
 The infographic had some truth in it indeed. There's a 87.5% chance that our curious data scientist would be in good mood on a sunny day.  
 
@@ -246,9 +240,9 @@ Surfing the Internet, however, he comes across a Garth Stein quote. Although not
  
 What if...?
 
-### Now the data scientist wants to know if his mood had any impact on the weather.  What is <img src="https://render.githubusercontent.com/render/math?math=P(S \mid G)"> 
+### Now the data scientist wants to know if his mood had any impact on the weather. What is <img src="https://render.githubusercontent.com/render/math?math=P(S \mid G)"> ?
 
- <img src="https://render.githubusercontent.com/render/math?math=P(S \mid G) =\dfrac{P(G  \cap S)}{ P(G)} = \dfrac{\frac{14}{50}}{\frac{25}{50}} = 0.56"> 
+<img src="https://render.githubusercontent.com/render/math?math=P(S \mid G) =\dfrac{P(G  \cap S)}{ P(G)} = \dfrac{\frac{14}{50}}{\frac{25}{50}} = 0.56"> 
 
 He finds that the probability is slightly higher than random chance (50%). In other words, there's a 56% chance that it will be all nice and sunny given that he is in a good mood. 
 
@@ -260,11 +254,9 @@ This doesn't really make sense. Our mood doesn't *cause* the weather, so there i
 
 <img src="images/Thomas_Bayes.gif" width="300">
 
-
 Bayes theorem is a very foundational theorem that uses the fact that  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B) = P(B) P(A \mid B) = P(A) P(B \mid A)"> . Note that, using Bayes theorem, you can compute conditional probabilities without explicitly needing to know  <img src="https://render.githubusercontent.com/render/math?math=P(A  \cap B)"> ! 
 
 This theorem is extremely important in many machine learning algorithms.
-
 
 Our data scientist realizes that he needs to learn a bit of Bayesian reasoning in order to get more meaningful results. And that is exactly what we will discuss further. First, we need to cover a few topics to fully understand how this simple equation lets you do some serious predictive analysis. 
 
