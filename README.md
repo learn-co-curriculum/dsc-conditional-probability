@@ -48,7 +48,7 @@ The probability of A or B occurring, <img src="https://render.githubusercontent.
 
 We subtract the intersection of the two events to avoid over-counting. See the diagram below for some intuition:
 
-<img src="images/Image_67_independent.png">
+<img src="images/Image_67_independent.png" width="500">
 
 Thus, in the case of two independent events, by substitution,
 
@@ -71,7 +71,7 @@ So you need both *pairwise independence* and *three-way independence*
 
 Disjoint events are **mutually exclusive**. <img src="https://render.githubusercontent.com/render/math?math=P (A  \cap B)"> is **empty**.
 
-<img src="images/Image_68Disjoint.png" width="300">
+<img src="images/Image_68Disjoint.png" width="500">
 
 ### Dependent Events 
 
