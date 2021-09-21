@@ -266,7 +266,7 @@ You'll do a few exercises next to get a good grip on conditional probability cal
 
 You are strongly advised to visit the following links to get an in-depth understanding with examples and proofs for explaining the formulas highlighted in this lesson. 
 
-[Conditional probability, Independence and Bayes rule](http://faculty.arts.ubc.ca/vmarmer/econ327/327_02_cond_probability.pdf) - A deeper mathematical explanation around Independence and theorems we have seen above (and some we shall cover in upcoming lessons)
+[Conditional probability, Independence and Bayes rule](https://www.dropbox.com/sh/qkjgd4fbo2pwph6/AABOTSgNJHe7753i3bPCJUMqa/327_02_cond_probability.pdf?dl=0) - A deeper mathematical explanation around Independence and theorems we have seen above (and some we shall cover in upcoming lessons). If you are having trouble accessing that link, try [this one](https://web.archive.org/web/20191020193152/http://faculty.arts.ubc.ca/vmarmer/econ327/327_02_cond_probability.pdf) instead.
 
 [Tree Diagrams](https://www.mathsisfun.com/data/probability-tree-diagrams.html) - Drawing tree diagrams to calculate conditional probability
 
